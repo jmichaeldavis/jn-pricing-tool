@@ -10,14 +10,36 @@ const quote = {
     salesCount: 2,
     fieldCount: 5
   },
-
 }
 
 function App() {
+  const [crmPackage, setCrmPackage] = useState(null)
+  const [engageCard, setEngageCard] = useState(null)
+  const [adminCount, setAdminCount] = useState(0)
+  const [salesCount, setSalesCount] = useState(0)
+  const [fieldCount, setFieldCount] = useState(0)
+
   return (
     <>
-      <PackageSelection />
-      <PricingSelection />
+      <PackageSelection 
+        crmPackage={crmPackage}
+        setCrmPackage={setCrmPackage}
+        engageCard={engageCard}
+        setEngageCard={setEngageCard}
+        adminCount={adminCount}
+        setAdminCount={setAdminCount}
+        salesCount={salesCount}
+        setSalesCount={setSalesCount}
+        fieldCount={fieldCount}
+        setFieldCount={setFieldCount}
+      />
+      <PricingSelection 
+        crmPackage={crmPackage}
+        engageCard={engageCard}
+        adminCount={adminCount}
+        salesCount={salesCount}
+        fieldCount={fieldCount}
+      />
     </>
   );
 }

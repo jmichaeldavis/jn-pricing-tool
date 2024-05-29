@@ -3,15 +3,14 @@ import styled from 'styled-components';
 export const PackageSelectionContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    height: 70vh;
-    width: 100vw;
-    margin-top: 8rem;
-    max-width: 1400px;
+    height: 100vh;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 4rem 0;
     `;
 
 export const RowContainer = styled.div`
@@ -19,7 +18,6 @@ export const RowContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 75%;
     gap: 2rem;
 `;
 // BASE CRM PACKAGE
@@ -36,14 +34,11 @@ export const BaseCrmCard = styled.button`
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: none;
-
-    &:focus {
-        outline: 5px solid #3B5EAB;
-    }
+    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
 
     &:hover {
         cursor: pointer;
-        outline: 5px solid #A9A9A9;
+        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 
@@ -144,14 +139,11 @@ export const EngageCard = styled.button`
     outline: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: none;
-
-    &:focus {
-        outline: 5px solid #3B5EAB;
-    }
+    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
 
     &:hover {
         cursor: pointer;
-        outline: 5px solid #A9A9A9;
+        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 
@@ -203,7 +195,6 @@ export const UserTypeSelectionContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 75%;
     gap: 2rem;
 `;
 
@@ -217,8 +208,11 @@ export const UserTypeCard = styled.div`
     border-radius: 1.25rem;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
+
     &:hover {
         cursor: pointer;
+        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 
