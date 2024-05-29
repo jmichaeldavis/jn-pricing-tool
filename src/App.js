@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { PackageSelection } from './Views/PackageSelection';
+import { PricingSelection } from './Views/PricingBreakdown';
+import { useState } from 'react';
+
+const quote = {
+  packageType: "Basic",
+  userTypes: {
+    adminCount: 1,
+    salesCount: 2,
+    fieldCount: 5
+  },
+
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <PackageSelection />
+      <PricingSelection />
+    </>
   );
 }
 
