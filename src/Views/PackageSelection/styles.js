@@ -10,8 +10,54 @@ export const PackageSelectionContainer = styled.div`
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 4rem 0;
+`;
+
+
+export const JobNimbusLogo = styled.img`
+    width: auto;
+    height: 3rem;
+    alt: "JobNimbus Logo";
+    top: 5px;
+    position: absolute;
+    left: 5px;
+`;  
+
+export const PageTitle = styled.div`
+    color: #000;
+    font-family: "DM Sans";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: Center;
+    position: absolute;
+    top: 5px;
+    opacity: 0.2;
+`;
+
+export const Bubble = styled.div`
+background: ${props => props.selected ? "#3B5EAB" : "#FFF"};
+border-radius: 1.25rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 2rem;
+    width: 15rem;
+    position: relative;
+    margin: auto;
+    top: -1.25rem;
+    opacity: ${props => props.selected ? "100%" : "0"};
+    align-items: center;
+    justify-content: center;
+    color: ${props => props.selected ? "#FFF" : "#A9A9A9"}
     `;
+
+export const BubbleText = styled.div`
+text-align: center;
+font-family: "DM Sans";
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+`;
 
 export const RowContainer = styled.div`
     display: flex;
@@ -25,8 +71,9 @@ export const BaseCrmCard = styled.button`
     width: 38.5rem;
     height: 20rem;
     display: flex;
+    position: relative;
     align-items: left;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: column;
     text-align: left;
     flex-shrink: 0;
@@ -34,11 +81,11 @@ export const BaseCrmCard = styled.button`
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: none;
-    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
+    outline: ${props => props.selected ? "4px solid #3B5EAB" : "none"};
 
     &:hover {
         cursor: pointer;
-        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
+        outline: 4px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 
@@ -50,7 +97,7 @@ export const TitleContainer = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     border-bottom: 2px solid #A9A9A9;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
 `;
 
 export const BaseCrmCardHeader = styled.div`
@@ -139,11 +186,11 @@ export const EngageCard = styled.button`
     outline: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: none;
-    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
+    outline: ${props => props.selected ? "4px solid #3B5EAB" : "none"};
 
     &:hover {
         cursor: pointer;
-        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
+        outline: 4px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 
@@ -208,11 +255,11 @@ export const UserTypeCard = styled.div`
     border-radius: 1.25rem;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    outline: ${props => props.selected ? "2px solid #3B5EAB" : "none"};
+    outline: ${props => props.selected ? "4px solid #3B5EAB" : "none"};
 
     &:hover {
         cursor: pointer;
-        outline: 2px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
+        outline: 4px solid ${props => props.selected ? "#3B5EAB" : "#A9A9A9"};
     }
 `;
 

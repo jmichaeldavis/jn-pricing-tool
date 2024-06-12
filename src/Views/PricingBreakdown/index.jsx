@@ -1,4 +1,5 @@
 import pricingData from "../pricingData";
+import React, { useState } from "react";
 import {
   PricingBreakdownContainer,
   PricingValueBubble,
@@ -10,6 +11,7 @@ import {
   CurrencyType,
   BillingPeriod,
   PricingLineItemContainer,
+  AdjustedLineItemContainer,
   PricingLineItem,
   PricingSubtotal,
   AnnualTotal,
@@ -17,40 +19,48 @@ import {
   PricingTotal,
   PricingDueToday,
   PricingBreakdownCardFooter,
-  RowContainer,
   TitleContainer,
   SubTitleContainer,
   PackageDetailsContainer,
   PackageTotalsContainer,
 } from "./styles";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export const PricingSelection = ({
+  
   crmPackage,
   engageCard,
   adminCount,
   salesCount,
   fieldCount,
+  annualView,
+  sixMonthView,
+  monthlyView,
 }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
   const options = [
     {
       label: "12-month",
       value: "annual",
       discount: 0.5,
       discountText: "50% CRM Discount",
-      priceMultiplier: 12
+      priceMultiplier: 12,
+      visible: annualView,
     },
     {
       label: "6-month",
       value: "sixMonth",
       discount: 0.2,
       discountText: "20% CRM Discount",
-      priceMultiplier: 6
+      priceMultiplier: 6,
+      visible: sixMonthView,
     },
     {
       label: "Monthly",
       value: "monthly",
       discount: 0,
-      priceMultiplier: 1
+      priceMultiplier: 1,
+      visible: monthlyView,
     },
   ]
 
@@ -131,11 +141,23 @@ export const PricingSelection = ({
     return Math.round(total);
   }
 
+  const handleSelect = (option) => {
+    if (selectedOption && selectedOption.value === option.value) {
+      setSelectedOption(null);
+    } else {
+      setSelectedOption(option);
+    }
+    }
   return (
     <PricingBreakdownContainer>
       {options.map((option) => (
-        <PricingBreakdownCard>
-          <PricingValueBubble>
+        option.visible && (
+          <PricingBreakdownCard     
+        onClick={() => handleSelect(option)}
+        selected={selectedOption && selectedOption.value === option.value}>
+          <PricingValueBubble 
+          selected={selectedOption && selectedOption.value === option.value}
+          >
             <PricingValueBubbleText>{getBubbleText(option)}</PricingValueBubbleText>
           </PricingValueBubble>
           <TitleContainer>
@@ -175,6 +197,18 @@ export const PricingSelection = ({
                   <AnnualTotal>${calculateTotal(option)}</AnnualTotal>
                 </PricingLineItemContainer>
               </>
+              ) : option.value === "sixMonth" ? (
+              <>
+              <PricingLineItemContainer>
+                <AnnualTotal>Semi-annual Total</AnnualTotal>
+                <AnnualTotal>${calculateTotal(option)/2}</AnnualTotal>
+              </PricingLineItemContainer>
+              <PricingLineItemContainer>
+                <PricingSubtotal>{option.discountText}</PricingSubtotal>
+                <PricingDiscount>+${calculateDiscount(option)/2}</PricingDiscount>
+              </PricingLineItemContainer>
+            </>
+
             ) : (
               <>
                 <PricingLineItemContainer>
@@ -187,20 +221,28 @@ export const PricingSelection = ({
                 </PricingLineItemContainer>
               </>
             )}
+          
           </PackageTotalsContainer>
-          {option.value !== "monthly" && (
-            <PricingLineItemContainer>
+          {option.value === "annual" ? (
+            <AdjustedLineItemContainer>
               <PricingTotal>Adjusted Total</PricingTotal>
               <PricingTotal>${calculateAdjustedTotal(option)}</PricingTotal>
-            </PricingLineItemContainer>
-          )}
+            </AdjustedLineItemContainer>
+          ) : option.value === "sixMonth" ? (
+            <AdjustedLineItemContainer>
+            <PricingTotal>Adjusted Total</PricingTotal>
+            <PricingTotal>${calculateAdjustedTotal(option)/2}</PricingTotal>
+          </AdjustedLineItemContainer>
+          ) : <></>}
           <PricingLineItemContainer>
             <PricingBreakdownCardFooter>Amount Due Today</PricingBreakdownCardFooter>
             <PricingDueToday>
               ${getAmountDueToday(option, calculateAdjustedTotal(option))}
             </PricingDueToday>
           </PricingLineItemContainer>
+        
         </PricingBreakdownCard >
+        )
       ))}
     </PricingBreakdownContainer >
   );

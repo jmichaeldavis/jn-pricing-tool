@@ -1,5 +1,9 @@
 import {
   PackageSelectionContainer,
+  JobNimbusLogo,
+  PageTitle,
+  Bubble,
+  BubbleText,
   RowContainer,
   BaseCrmCard,
   TitleContainer,
@@ -40,11 +44,18 @@ export const PackageSelection = ({
 
   return (
     <PackageSelectionContainer>
+      <JobNimbusLogo src={require('../../Assets/JNLogo.png')} />
+      <PageTitle>Pricing Calculator</PageTitle>
       <RowContainer>
         <BaseCrmCard
           onClick={() => setCrmPackage("growing")}
           selected={crmPackage === "growing"}
         >
+          <Bubble 
+            selected={crmPackage === "growing"}          
+          >
+            <BubbleText>Recommended</BubbleText>
+          </Bubble>
           <TitleContainer>
             <BaseCrmCardHeader>Growing</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Single-location Business</BaseCrmCardSubHeader>
@@ -59,6 +70,11 @@ export const PackageSelection = ({
           onClick={() => setCrmPackage("established")}
           selected={crmPackage === "established"}
         >
+          <Bubble 
+            selected={crmPackage === "established"}          
+          >
+            <BubbleText>Recommended</BubbleText>
+          </Bubble>
           <TitleContainer>
             <BaseCrmCardHeader>Established</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Run Multi-locations or Businesses</BaseCrmCardSubHeader>
@@ -76,6 +92,11 @@ export const PackageSelection = ({
           onClick={() => setEngageCard("starter")}
           selected={engageCard === "starter"}
         >
+          <Bubble 
+            selected={engageCard === "starter"}          
+          >
+            <BubbleText>Recommended</BubbleText>
+          </Bubble>       
           <TitleContainer>
             <EngageCardHeader>Starter</EngageCardHeader>
             <EngageCardSubHeader>Ideal for up to 4 lines</EngageCardSubHeader>
@@ -92,6 +113,11 @@ export const PackageSelection = ({
           onClick={() => setEngageCard("premium")}
           selected={engageCard === "premium"}
         >
+          <Bubble 
+            selected={engageCard === "premium"}          
+          >
+            <BubbleText>Recommended</BubbleText>
+          </Bubble>
           <TitleContainer>
             <EngageCardHeader>Premium</EngageCardHeader>
             <EngageCardSubHeader>Ideal for 5-10 lines</EngageCardSubHeader>
@@ -108,6 +134,11 @@ export const PackageSelection = ({
           onClick={() => setEngageCard("enterprise")}
           selected={engageCard === "enterprise"}
         >
+          <Bubble 
+            selected={engageCard === "enterprise"}          
+          >
+            <BubbleText>Recommended</BubbleText>
+          </Bubble>
           <TitleContainer>
             <EngageCardHeader>Enterprise</EngageCardHeader>
             <EngageCardSubHeader>Ideal for up to 4 lines</EngageCardSubHeader>

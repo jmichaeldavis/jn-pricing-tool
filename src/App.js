@@ -1,6 +1,8 @@
 import './App.css';
 import { PackageSelection } from './Views/PackageSelection';
 import { PricingSelection } from './Views/PricingBreakdown';
+import { ViewSelection } from './Views/ViewSelection';
+import { SubscriptionBreakdown } from './Views/SubscriptionBreakdown';
 import { useState } from 'react';
 
 const quote = {
@@ -13,15 +15,33 @@ const quote = {
 }
 
 function App() {
+  const goToNextPage = () => {setPage('next');};
+  const goToFirstPage = () => {setPage('first');};
+  const [page, setPage] = useState('first');
+  const [annualView, setAnnualView] = useState(true)
+  const [sixMonthView, setSixMonthView] = useState(true)
+  const [monthlyView, setMonthlyView] = useState(true)
   const [crmPackage, setCrmPackage] = useState(null)
   const [engageCard, setEngageCard] = useState(null)
   const [adminCount, setAdminCount] = useState(0)
   const [salesCount, setSalesCount] = useState(0)
   const [fieldCount, setFieldCount] = useState(0)
-
   return (
-    <>
+  <> 
+   {page === 'first' && 
+      <ViewSelection
+        goToNextPage={goToNextPage}
+        annualView={annualView}
+        setAnnualView={setAnnualView}
+        sixMonthView={sixMonthView}
+        setSixMonthView={setSixMonthView}
+        monthlyView={monthlyView}
+        setMonthlyView={setMonthlyView}
+      />}
+   {page === 'next' && 
+   <>
       <PackageSelection 
+        goToFirstPage={goToFirstPage}
         crmPackage={crmPackage}
         setCrmPackage={setCrmPackage}
         engageCard={engageCard}
@@ -39,8 +59,19 @@ function App() {
         adminCount={adminCount}
         salesCount={salesCount}
         fieldCount={fieldCount}
+        annualView={annualView}
+        sixMonthView={sixMonthView}
+        monthlyView={monthlyView}
       />
-    </>
+      <SubscriptionBreakdown 
+        crmPackage={crmPackage}
+        engageCard={engageCard}
+        adminCount={adminCount}
+        salesCount={salesCount}
+        fieldCount={fieldCount}
+      />
+    </> }
+  </>
   );
 }
 
