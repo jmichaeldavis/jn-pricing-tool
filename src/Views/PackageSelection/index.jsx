@@ -141,7 +141,7 @@ export const PackageSelection = ({
           </Bubble>
           <TitleContainer>
             <EngageCardHeader>Enterprise</EngageCardHeader>
-            <EngageCardSubHeader>Ideal for up to 4 lines</EngageCardSubHeader>
+            <EngageCardSubHeader>Ideal for 11+ lines</EngageCardSubHeader>
           </TitleContainer>
           <PackageDetailsContainer>
             <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
