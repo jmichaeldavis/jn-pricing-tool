@@ -62,20 +62,21 @@ line-height: normal;
 export const RowContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     gap: 2rem;
 `;
 // BASE CRM PACKAGE
 export const BaseCrmCard = styled.button`
     width: 38.5rem;
-    height: 20rem;
+    height: 20.5rem;
     display: flex;
     position: relative;
     align-items: left;
     justify-content: flex-start;
     flex-direction: column;
     text-align: left;
+    flex-grow: 1;
     flex-shrink: 0;
     border-radius: 1.25rem;
     background: #FFF;
@@ -89,15 +90,24 @@ export const BaseCrmCard = styled.button`
     }
 `;
 
+export const CardCost = styled.div`
+    color: #000;
+    text-align: right;
+    margin-left: auto;
+    padding-right: 1rem;
+    font-size: 1.15rem;
+    color: #6A6A6A;
+`
+
+
 export const TitleContainer = styled.div`
-    height: 2rem;
+    height: 6.5rem;
     width: 100%;
     display: flex;
     align-items: left;
     flex-direction: column;
     justify-content: flex-end;
     border-bottom: 2px solid #A9A9A9;
-    margin-top: 2.5rem;
 `;
 
 export const BaseCrmCardHeader = styled.div`
@@ -157,7 +167,6 @@ export const BaseCrmCardPackageDetailsHeader = styled.div`
     line-height: normal;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
-
 `;
 
 // Base CRM Card Package Details
@@ -287,7 +296,7 @@ export const UserTypeCardHeader = styled.div`
 export const UserTypeCardSubHeader = styled.div`
     color: #6A6A6A;
     font-family: "DM Sans";
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -297,26 +306,43 @@ export const UserTypeCounterContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 1rem;
+    height: 100%;
 `;
 
-export const UserTypeCounter = styled.div`
+export const UserTypeCounter = styled.input`
     color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "DM Sans";
     font-size: 4rem;
+    width: 7rem;
+    border: none;
+    outline: none;
+    button: none;
+`;
+
+export const UserTypeRightContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
 `;
 
 export const UserTypeCardButtonContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-left: 0.5rem;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 1rem;
 `;
+
 export const UserTypeCardButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
     width: 2rem;
     height: 2rem;
     color: #A9A9A9;

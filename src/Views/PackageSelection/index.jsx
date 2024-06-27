@@ -6,6 +6,7 @@ import {
   BubbleText,
   RowContainer,
   BaseCrmCard,
+  CardCost,
   TitleContainer,
   BaseCrmCardHeader,
   BaseCrmCardSubHeader,
@@ -25,6 +26,7 @@ import {
   UserTypeCardSubHeader,
   UserTypeCounterContainer,
   UserTypeCounter,
+  UserTypeRightContainer,
   UserTypeCardButtonContainer,
   UserTypeCardButton,
 } from "./styles";
@@ -48,7 +50,7 @@ export const PackageSelection = ({
       <PageTitle>Pricing Calculator</PageTitle>
       <RowContainer>
         <BaseCrmCard
-          onClick={() => setCrmPackage("growing")}
+          onClick={() => crmPackage === "growing" ? setCrmPackage(null) : setCrmPackage("growing")}
           selected={crmPackage === "growing"}
         >
           <Bubble 
@@ -57,6 +59,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
+            <CardCost>$199/month</CardCost>
             <BaseCrmCardHeader>Growing</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Single-location Business</BaseCrmCardSubHeader>
           </TitleContainer>
@@ -67,7 +70,7 @@ export const PackageSelection = ({
           <BaseCrmCardFooter>Standard Onboarding</BaseCrmCardFooter>
         </BaseCrmCard>
         <BaseCrmCard
-          onClick={() => setCrmPackage("established")}
+          onClick={() => crmPackage === "established" ? setCrmPackage(null) : setCrmPackage("established")}
           selected={crmPackage === "established"}
         >
           <Bubble 
@@ -76,6 +79,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
+            <CardCost>$499/month</CardCost>
             <BaseCrmCardHeader>Established</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Run Multi-locations or Businesses</BaseCrmCardSubHeader>
           </TitleContainer>
@@ -84,20 +88,21 @@ export const PackageSelection = ({
             <BaseCrmCardPackageDetails>Unlimited integrations</BaseCrmCardPackageDetails>
             <BaseCrmCardPackageDetails>Access to Open API Documentation</BaseCrmCardPackageDetails>
           </PackageDetailsContainer>
-          <BaseCrmCardFooter>Eligible for Account Manager $1000+</BaseCrmCardFooter>
+          <BaseCrmCardFooter>Eligible for Account Manager $750+</BaseCrmCardFooter>
         </BaseCrmCard>
       </RowContainer>
       <RowContainer>
         <EngageCard
-          onClick={() => setEngageCard("starter")}
+          onClick={() => engageCard === "starter" ? setEngageCard(null) : setEngageCard("starter")}
           selected={engageCard === "starter"}
         >
           <Bubble 
             selected={engageCard === "starter"}          
           >
             <BubbleText>Recommended</BubbleText>
-          </Bubble>       
+          </Bubble> 
           <TitleContainer>
+            <CardCost>$49/month</CardCost>      
             <EngageCardHeader>Starter</EngageCardHeader>
             <EngageCardSubHeader>Ideal for up to 4 lines</EngageCardSubHeader>
           </TitleContainer>
@@ -110,7 +115,7 @@ export const PackageSelection = ({
           </PackageDetailsContainer>
         </EngageCard>
         <EngageCard
-          onClick={() => setEngageCard("premium")}
+          onClick={() => engageCard === "premium" ? setEngageCard(null) : setEngageCard("premium")}
           selected={engageCard === "premium"}
         >
           <Bubble 
@@ -119,6 +124,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
+            <CardCost>$99/month</CardCost>
             <EngageCardHeader>Premium</EngageCardHeader>
             <EngageCardSubHeader>Ideal for 5-10 lines</EngageCardSubHeader>
           </TitleContainer>
@@ -131,7 +137,7 @@ export const PackageSelection = ({
           </PackageDetailsContainer>
         </EngageCard>
         <EngageCard
-          onClick={() => setEngageCard("enterprise")}
+          onClick={() => engageCard === "enterprise" ? setEngageCard(null) : setEngageCard("enterprise")}
           selected={engageCard === "enterprise"}
         >
           <Bubble 
@@ -140,6 +146,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
+            <CardCost>$249/month</CardCost>
             <EngageCardHeader>Enterprise</EngageCardHeader>
             <EngageCardSubHeader>Ideal for 11+ lines</EngageCardSubHeader>
           </TitleContainer>
@@ -160,8 +167,14 @@ export const PackageSelection = ({
             <UserTypeCardHeader>Admin</UserTypeCardHeader>
             <UserTypeCardSubHeader>All Access</UserTypeCardSubHeader>
           </UserTitleContainer>
+          <UserTypeRightContainer> 
+          <CardCost>$75/month</CardCost>
           <UserTypeCounterContainer>
-            <UserTypeCounter>{adminCount}</UserTypeCounter>
+            <UserTypeCounter 
+              value={adminCount} 
+              type="number"
+              onChange={(e) => setAdminCount(parseInt(e.target.value))}
+            />
             <UserTypeCardButtonContainer>
               <UserTypeCardButton
                 onClick={() => setAdminCount(adminCount + 1)}
@@ -175,6 +188,7 @@ export const PackageSelection = ({
               </UserTypeCardButton>
             </UserTypeCardButtonContainer>
           </UserTypeCounterContainer>
+          </UserTypeRightContainer> 
         </UserTypeCard>
         <UserTypeCard
           selected={salesCount > 0}
@@ -183,8 +197,14 @@ export const PackageSelection = ({
             <UserTypeCardHeader>Sales</UserTypeCardHeader>
             <UserTypeCardSubHeader>Excludes Subscription<br></br>and Settings Access</UserTypeCardSubHeader>
           </UserTitleContainer>
+          <UserTypeRightContainer> 
+          <CardCost>$55/month</CardCost>
           <UserTypeCounterContainer>
-            <UserTypeCounter>{salesCount}</UserTypeCounter>
+          <UserTypeCounter 
+              value={salesCount} 
+              type="number"
+              onChange={(e) => setSalesCount(parseInt(e.target.value))}
+            />            
             <UserTypeCardButtonContainer>
               <UserTypeCardButton
                 onClick={() => setSalesCount(salesCount + 1)}
@@ -198,6 +218,7 @@ export const PackageSelection = ({
               </UserTypeCardButton>
             </UserTypeCardButtonContainer>
           </UserTypeCounterContainer>
+          </UserTypeRightContainer> 
         </UserTypeCard>
         <UserTypeCard
           selected={fieldCount > 0}
@@ -206,8 +227,14 @@ export const PackageSelection = ({
             <UserTypeCardHeader>Field</UserTypeCardHeader>
             <UserTypeCardSubHeader>Mobile App Access Only<br></br>No Reporting Access</UserTypeCardSubHeader>
           </UserTitleContainer>
+          <UserTypeRightContainer> 
+          <CardCost>$30/month</CardCost>
           <UserTypeCounterContainer>
-            <UserTypeCounter>{fieldCount}</UserTypeCounter>
+          <UserTypeCounter 
+              value={fieldCount} 
+              type="number"
+              onChange={(e) => setFieldCount(parseInt(e.target.value))}
+            />            
             <UserTypeCardButtonContainer>
               <UserTypeCardButton
                 onClick={() => setFieldCount(fieldCount + 1)}
@@ -221,6 +248,7 @@ export const PackageSelection = ({
               </UserTypeCardButton>
             </UserTypeCardButtonContainer>
           </UserTypeCounterContainer>
+          </UserTypeRightContainer> 
         </UserTypeCard>
       </UserTypeSelectionContainer>
     </PackageSelectionContainer>
