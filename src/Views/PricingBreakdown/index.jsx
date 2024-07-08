@@ -39,13 +39,13 @@ export const PricingSelection = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const options = [
+
     {
-      label: "12-month",
-      value: "annual",
-      discount: 0.5,
-      discountText: "50% CRM Discount",
-      priceMultiplier: 12,
-      visible: annualView,
+      label: "Monthly",
+      value: "monthly",
+      discount: 0,
+      priceMultiplier: 1,
+      visible: monthlyView,
     },
     {
       label: "6-month",
@@ -56,12 +56,13 @@ export const PricingSelection = ({
       visible: sixMonthView,
     },
     {
-      label: "Monthly",
-      value: "monthly",
-      discount: 0,
-      priceMultiplier: 1,
-      visible: monthlyView,
-    },
+      label: "12-month",
+      value: "annual",
+      discount: 0.5,
+      discountText: "50% CRM Discount",
+      priceMultiplier: 12,
+      visible: annualView,
+    }
   ]
 
   const getBubbleText = (option) => {

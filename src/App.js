@@ -23,9 +23,9 @@ function App() {
   const [monthlyView, setMonthlyView] = useState(true)
   const [crmPackage, setCrmPackage] = useState(null)
   const [engageCard, setEngageCard] = useState(null)
-  const [adminCount, setAdminCount] = useState(0)
-  const [salesCount, setSalesCount] = useState(0)
-  const [fieldCount, setFieldCount] = useState(0)
+  const [adminCount, setAdminCount] = useState(1)
+  const [salesCount, setSalesCount] = useState(1)
+  const [fieldCount, setFieldCount] = useState(1)
   return (
   <> 
    {page === 'first' && 

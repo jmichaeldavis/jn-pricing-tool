@@ -5,6 +5,7 @@ import {
   Bubble,
   BubbleText,
   RowContainer,
+  RowTitle,
   BaseCrmCard,
   CardCost,
   TitleContainer,
@@ -49,6 +50,7 @@ export const PackageSelection = ({
       <JobNimbusLogo src={require('../../Assets/JNLogo.png')} />
       <PageTitle>Pricing Calculator</PageTitle>
       <RowContainer>
+        <RowTitle>CRM Package</RowTitle>
         <BaseCrmCard
           onClick={() => crmPackage === "growing" ? setCrmPackage(null) : setCrmPackage("growing")}
           selected={crmPackage === "growing"}
@@ -92,6 +94,7 @@ export const PackageSelection = ({
         </BaseCrmCard>
       </RowContainer>
       <RowContainer>
+      <RowTitle>Texting Package</RowTitle>
         <EngageCard
           onClick={() => engageCard === "starter" ? setEngageCard(null) : setEngageCard("starter")}
           selected={engageCard === "starter"}
@@ -108,8 +111,6 @@ export const PackageSelection = ({
           </TitleContainer>
           <PackageDetailsContainer>
             <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
-            <EngageCardPackageDetails>2 phone lines included (up to 4)</EngageCardPackageDetails>
-            <EngageCardPackageDetails>Additional lines $4/month</EngageCardPackageDetails>
             <EngageCardPackageDetails>200 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.10/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
@@ -130,8 +131,6 @@ export const PackageSelection = ({
           </TitleContainer>
           <PackageDetailsContainer>
             <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
-            <EngageCardPackageDetails>10 phone lines included</EngageCardPackageDetails>
-            <EngageCardPackageDetails>Additional lines $4/month</EngageCardPackageDetails>
             <EngageCardPackageDetails>2000 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.035/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
@@ -152,14 +151,13 @@ export const PackageSelection = ({
           </TitleContainer>
           <PackageDetailsContainer>
             <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
-            <EngageCardPackageDetails>25 phone lines included</EngageCardPackageDetails>
-            <EngageCardPackageDetails>Additional lines $4/month</EngageCardPackageDetails>
             <EngageCardPackageDetails>10,000 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.025/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
         </EngageCard>
       </RowContainer>
       <UserTypeSelectionContainer>
+        <RowTitle>User Selection</RowTitle>
         <UserTypeCard
           selected={adminCount > 0}
         >

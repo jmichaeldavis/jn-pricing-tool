@@ -66,6 +66,17 @@ export const RowContainer = styled.div`
     flex-direction: row;
     gap: 2rem;
 `;
+
+export const RowTitle = styled.div`
+    color: #3B5EAB;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    position: absolute;
+    left: 1rem;
+`;
 // BASE CRM PACKAGE
 export const BaseCrmCard = styled.button`
     width: 38.5rem;
@@ -91,12 +102,11 @@ export const BaseCrmCard = styled.button`
 `;
 
 export const CardCost = styled.div`
-    color: #000;
     text-align: right;
     margin-left: auto;
     padding-right: 1rem;
     font-size: 1.15rem;
-    color: #6A6A6A;
+    color: #000;
 `
 
 
@@ -188,7 +198,7 @@ export const EngageCard = styled.button`
     justify-content: space-between;
     flex-direction: column;
     width: 25rem;
-    height:20rem;
+    height:17rem;
     flex-shrink: 0; 
     border-radius: 1.25rem;
     background: #FFF;

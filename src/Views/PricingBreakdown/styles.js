@@ -7,7 +7,7 @@ export const PricingBreakdownContainer = styled.div`
     gap: 2rem;
     height: 60vh;
     width: 100vw;
-    margin-top: 20rem;
+    margin-top: 1rem;
 `;
  
 export const RowContainer = styled.div`
