@@ -192,7 +192,7 @@ export const PackageSelection = ({
           selected={salesCount > 0}
         >
           <UserTitleContainer>
-            <UserTypeCardHeader>Sales</UserTypeCardHeader>
+            <UserTypeCardHeader>Standard</UserTypeCardHeader>
             <UserTypeCardSubHeader>Excludes Subscription<br></br>and Settings Access</UserTypeCardSubHeader>
           </UserTitleContainer>
           <UserTypeRightContainer> 

@@ -42,7 +42,7 @@ const fieldStatement = `${fieldCount} x $30: $${fieldCount * 30}`;
                 <LineItemValue>{adminStatement}</LineItemValue>
             </LineItemContainer>
             <LineItemContainer>
-                <SecondaryLineItem>Sales Users:</SecondaryLineItem>
+                <SecondaryLineItem>Standard Users:</SecondaryLineItem>
                 <LineItemValue>{salesStatement}</LineItemValue>
             </LineItemContainer>
             <LineItemContainer>
