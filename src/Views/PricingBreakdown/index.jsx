@@ -8,6 +8,8 @@ import {
   PricingBreakdownCardHeader,
   PricingBreakdownCardSubHeader,
   MonthlyCost,
+  MonthlyPriceContainer,
+  MonthlyAmountContainer,
   CurrencyType,
   BillingPeriod,
   PricingLineItemContainer,
@@ -162,14 +164,16 @@ export const PricingSelection = ({
             <PricingValueBubbleText>{getBubbleText(option)}</PricingValueBubbleText>
           </PricingValueBubble>
           <TitleContainer>
-            <PricingBreakdownCardHeader>{option.label}</PricingBreakdownCardHeader>
-            <PricingBreakdownCardSubHeader>Payment</PricingBreakdownCardSubHeader>
+            <MonthlyPriceContainer>
+              <PricingBreakdownCardHeader>{option.label}</PricingBreakdownCardHeader>
+              <PricingBreakdownCardSubHeader>Payment</PricingBreakdownCardSubHeader>
+            </MonthlyPriceContainer>
             <SubTitleContainer>
-              <div>
+              <MonthlyAmountContainer>
                 <MonthlyCost>${Math.round(calculateAdjustedTotal(option) / 12)}</MonthlyCost>
                 <CurrencyType>USD<br></br>/month</CurrencyType>
-              </div>
-              <BillingPeriod>{getBillingFrequency(option)}</BillingPeriod>
+              </MonthlyAmountContainer>
+                <BillingPeriod>{getBillingFrequency(option)}</BillingPeriod>
             </SubTitleContainer>
           </TitleContainer>
           <PackageDetailsContainer>

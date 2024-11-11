@@ -86,7 +86,6 @@ export const PackageSelection = ({
             <BaseCrmCardSubHeader>Run Multi-locations or Businesses</BaseCrmCardSubHeader>
           </TitleContainer>
           <PackageDetailsContainer>
-            <BaseCrmCardPackageDetailsHeader>Features</BaseCrmCardPackageDetailsHeader>
             <BaseCrmCardPackageDetails>Unlimited integrations</BaseCrmCardPackageDetails>
             <BaseCrmCardPackageDetails>Access to Open API Documentation</BaseCrmCardPackageDetails>
           </PackageDetailsContainer>
@@ -110,7 +109,6 @@ export const PackageSelection = ({
             <EngageCardSubHeader>Ideal for up to 4 lines</EngageCardSubHeader>
           </TitleContainer>
           <PackageDetailsContainer>
-            <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
             <EngageCardPackageDetails>200 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.10/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
@@ -130,7 +128,6 @@ export const PackageSelection = ({
             <EngageCardSubHeader>Ideal for 5-10 lines</EngageCardSubHeader>
           </TitleContainer>
           <PackageDetailsContainer>
-            <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
             <EngageCardPackageDetails>2000 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.035/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
@@ -150,7 +147,6 @@ export const PackageSelection = ({
             <EngageCardSubHeader>Ideal for 11+ lines</EngageCardSubHeader>
           </TitleContainer>
           <PackageDetailsContainer>
-            <EngageCardPackageDetailsHeader>Features</EngageCardPackageDetailsHeader>
             <EngageCardPackageDetails>10,000 credits included per month</EngageCardPackageDetails>
             <EngageCardPackageDetails>$0.025/additional credit</EngageCardPackageDetails>
           </PackageDetailsContainer>
@@ -162,11 +158,11 @@ export const PackageSelection = ({
           selected={adminCount > 0}
         >
           <UserTitleContainer>
+            <CardCost>$75/month</CardCost>
             <UserTypeCardHeader>Admin</UserTypeCardHeader>
             <UserTypeCardSubHeader>All Access</UserTypeCardSubHeader>
           </UserTitleContainer>
           <UserTypeRightContainer> 
-          <CardCost>$75/month</CardCost>
           <UserTypeCounterContainer>
             <UserTypeCounter 
               value={adminCount} 
@@ -192,11 +188,11 @@ export const PackageSelection = ({
           selected={salesCount > 0}
         >
           <UserTitleContainer>
+            <CardCost>$55/month</CardCost>
             <UserTypeCardHeader>Standard</UserTypeCardHeader>
             <UserTypeCardSubHeader>Excludes Subscription<br></br>and Settings Access</UserTypeCardSubHeader>
           </UserTitleContainer>
           <UserTypeRightContainer> 
-          <CardCost>$55/month</CardCost>
           <UserTypeCounterContainer>
           <UserTypeCounter 
               value={salesCount} 
@@ -222,11 +218,11 @@ export const PackageSelection = ({
           selected={fieldCount > 0}
         >
           <UserTitleContainer>
+            <CardCost>$30/month</CardCost>
             <UserTypeCardHeader>Field</UserTypeCardHeader>
             <UserTypeCardSubHeader>Mobile App Access Only<br></br>No Reporting Access</UserTypeCardSubHeader>
           </UserTitleContainer>
           <UserTypeRightContainer> 
-          <CardCost>$30/month</CardCost>
           <UserTypeCounterContainer>
           <UserTypeCounter 
               value={fieldCount} 
