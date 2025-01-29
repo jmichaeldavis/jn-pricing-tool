@@ -189,7 +189,7 @@ export const PackageSelection = ({
         >
           <UserTitleContainer>
             <CardCost>$55/month</CardCost>
-            <UserTypeCardHeader>Standard</UserTypeCardHeader>
+            <UserTypeCardHeader>Sales/Office</UserTypeCardHeader>
             <UserTypeCardSubHeader>Excludes Subscription<br></br>and Settings Access</UserTypeCardSubHeader>
           </UserTitleContainer>
           <UserTypeRightContainer> 
