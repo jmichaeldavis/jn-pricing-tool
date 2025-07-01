@@ -1,8 +1,8 @@
 
 // Pricing data per unit
 const pricingData = {
-    growing: 199,
-    established: 499,
+    growing: 225,
+    established: 550,
     starter: 49,
     premium: 99,
     enterprise: 249,
