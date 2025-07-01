@@ -61,7 +61,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
-            <CardCost>$199/month</CardCost>
+            <CardCost>$225/month</CardCost>
             <BaseCrmCardHeader>Growing</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Single-location Business</BaseCrmCardSubHeader>
           </TitleContainer>
@@ -81,7 +81,7 @@ export const PackageSelection = ({
             <BubbleText>Recommended</BubbleText>
           </Bubble>
           <TitleContainer>
-            <CardCost>$499/month</CardCost>
+            <CardCost>$550/month</CardCost>
             <BaseCrmCardHeader>Established</BaseCrmCardHeader>
             <BaseCrmCardSubHeader>Run Multi-locations or Businesses</BaseCrmCardSubHeader>
           </TitleContainer>
